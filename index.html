@@ -36,7 +36,7 @@
             /* width: 100% é implícito por left:0; right:0; */
             z-index: 50; /* Garante que fique acima de tudo */
         }
-        
+
         /* Estilos do Acordeão */
         .accordion-content {
             max-height: 0;
@@ -54,8 +54,18 @@
             transform: rotate(90deg);
             transition: transform 0.3s ease;
         }
+
+        /* Estilo para o Toggle */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2563EB;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2563EB;
+        }
     </style>
     <script>
+        // Configuração do Tailwind
         tailwind.config = {
             theme: {
                 extend: {
@@ -97,7 +107,7 @@
     </div>
 
     <div id="screen-content-wrapper" class="pt-8 h-[680px] overflow-y-scroll overflow-x-hidden rounded-[24px] relative">
-        
+
         <div id="screen-login" class="screen flex flex-col h-full p-6 transition-opacity duration-300">
             <div class="text-center mt-4 mb-10">
                 <span class="text-4xl font-extrabold text-primary-blue">TeachFlow</span>
@@ -140,39 +150,6 @@
                 Próximo
             </button>
         </div>
-
-        <div id="screen-onboarding-2" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-             <div class="flex flex-col items-center justify-center text-center h-full">
-                <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">group</span>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Gerencie seus alunos</h2>
-                <p class="text-gray-neutral px-4">Mantenha todos os contatos, informações e progresso de cada aluno em um só lugar.</p>
-            </div>
-            <div class="flex justify-center space-x-2 my-8">
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-2 h-2 bg-primary-blue rounded-full"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-            </div>
-            <button onclick="showScreen('screen-onboarding-3')" class="w-full p-3 bg-primary-blue text-white font-semibold rounded-xl shadow-lg hover:bg-primary-blue/90 transition duration-150 mb-6">
-                Próximo
-            </button>
-        </div>
-
-        <div id="screen-onboarding-3" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-             <div class="flex flex-col items-center justify-center text-center h-full">
-                <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">schedule</span>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Controle seus horários</h2>
-                <p class="text-gray-neutral px-4">Visualize rapidamente seus momentos livres e maximize sua produtividade e renda.</p>
-            </div>
-            <div class="flex justify-center space-x-2 my-8">
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-2 h-2 bg-primary-blue rounded-full"></span>
-            </div>
-            <button onclick="showScreen('screen-dashboard')" class="w-full p-3 bg-success-green text-white font-semibold rounded-xl shadow-lg hover:bg-success-green/90 transition duration-150 mb-6">
-                Começar
-            </button>
-        </div>
-
         <div id="screen-dashboard" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="p-4 pt-12">
                 <div class="flex justify-between items-center mb-6">
@@ -331,7 +308,7 @@
                 <span class="material-icons-outlined text-2xl">add</span>
             </button>
         </div>
-
+        
         <div id="screen-alunos" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="p-4 pt-12">
                 <h1 class="text-2xl font-bold text-gray-900 mb-4">Meus Alunos</h1>
@@ -397,7 +374,7 @@
                 <span class="material-icons-outlined text-2xl">person_add</span>
             </button>
         </div>
-
+        
         <div id="screen-perfil-aluno" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="flex flex-col h-full overflow-y-auto pb-16">
                 <div class="bg-primary-blue p-6 pt-12 text-white shadow-md3 relative">
@@ -555,15 +532,6 @@
                             <input type="checkbox" name="toggle" id="toggle-recorrente" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-light border-4 appearance-none cursor-pointer" />
                             <label for="toggle-recorrente" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                         </div>
-                        <style>
-                            .toggle-checkbox:checked {
-                                right: 0;
-                                border-color: #2563EB;
-                            }
-                            .toggle-checkbox:checked + .toggle-label {
-                                background-color: #2563EB;
-                            }
-                        </style>
                     </div>
                 </div>
                 <div class="p-4 border-t border-gray-200 bg-surface-light">
@@ -796,16 +764,6 @@
                                     <input type="checkbox" checked name="toggle" id="toggle-notif" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-light border-4 appearance-none cursor-pointer" />
                                     <label for="toggle-notif" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                 </div>
-                                <style>
-                                    /* Mantém o estilo do toggle, garantindo que ele funcione na nova tela */
-                                    #toggle-notif:checked {
-                                        right: 0;
-                                        border-color: #2563EB;
-                                    }
-                                    #toggle-notif:checked + .toggle-label {
-                                        background-color: #2563EB;
-                                    }
-                                </style>
                             </li>
                             <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer">
                                 <div>
@@ -832,14 +790,14 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <button onclick="showScreen('screen-login')" class="w-full p-3 mt-4 bg-danger-red text-white font-semibold rounded-xl shadow-md3 hover:bg-danger-red/90 transition duration-150 flex items-center justify-center">
                         <span class="material-icons-outlined text-xl mr-2">logout</span> Sair da Conta
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <div id="screen-pacotes" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="flex flex-col h-full">
                 <div class="p-4 pt-12 bg-surface-light shadow-sm flex items-center border-b border-gray-200">
@@ -850,7 +808,7 @@
                 </div>
 
                 <div class="flex-1 overflow-y-auto p-4 space-y-4">
-                    
+
                     <div class="bg-primary-blue text-white p-4 rounded-xl shadow-md3">
                         <p class="text-sm font-light opacity-80 mb-1">Visão Geral (Mês)</p>
                         <div class="flex justify-between items-center">
@@ -866,7 +824,7 @@
                     </div>
 
                     <h2 class="text-lg font-semibold text-gray-900 mb-2 mt-4">Meus Planos Atuais</h2>
-                    
+
                     <div class="accordion-item bg-surface-light rounded-xl shadow-md3 border-l-4 border-success-green">
                         <div class="p-4 cursor-pointer" onclick="toggleAccordion(this)">
                             <div class="flex justify-between items-start mb-2">
@@ -908,7 +866,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="accordion-item bg-surface-light rounded-xl shadow-md3 border-l-4 border-pending-yellow">
                         <div class="p-4 cursor-pointer" onclick="toggleAccordion(this)">
                             <div class="flex justify-between items-start mb-2">
@@ -988,7 +946,7 @@
 
     </div>
     
-    <div id="bottom-nav" class="bg-surface-light border-t border-gray-200 shadow-lg flex justify-around items-center h-16 rounded-t-2xl">
+    <div id="bottom-nav" class="bg-surface-light border-t border-gray-200 shadow-lg flex justify-around items-center h-16 rounded-t-2xl hidden">
         <button onclick="showScreen('screen-dashboard')" class="flex flex-col items-center text-primary-blue">
             <span class="material-icons-outlined text-xl">home</span>
             <span class="text-xs">Home</span>
@@ -1021,6 +979,7 @@
     ];
 
     const showScreen = (screenId) => {
+        // Oculta todas as telas
         screens.forEach(id => {
             const screen = document.getElementById(id);
             if (screen) {
@@ -1029,16 +988,17 @@
             }
         });
 
+        // Mostra a tela ativa
         const activeScreen = document.getElementById(screenId);
         if (activeScreen) {
             activeScreen.classList.remove('hidden');
             activeScreen.classList.add('flex');
         }
 
-        // Controla a visibilidade do Bottom Navigation
+        // Controla a visibilidade e o estado do Bottom Navigation
         const bottomNav = document.getElementById('bottom-nav');
-        // Define quais telas devem mostrar a barra de navegação (todas as telas de conteúdo principal)
-        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario', 'screen-configuracoes', 'screen-pacotes'].includes(screenId);
+        // Define quais telas devem mostrar a barra de navegação
+        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario', 'screen-configuracoes', 'screen-pacotes', 'screen-agendamento'].includes(screenId);
 
         if (bottomNav) {
              if (showNav) {
@@ -1053,28 +1013,31 @@
                 let activeButton;
                 if (screenId === 'screen-dashboard') activeButton = document.querySelector('#bottom-nav button:nth-child(1)');
                 if (screenId === 'screen-agenda') activeButton = document.querySelector('#bottom-nav button:nth-child(2)');
-                if (screenId === 'screen-alunos' || screenId === 'screen-perfil-aluno' || screenId === 'screen-agendamento' || screenId === 'screen-horarios') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
-                if (screenId === 'screen-perfil-usuario' || screenId === 'screen-configuracoes' || screenId === 'screen-pacotes') activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
+                // Agrupando todas as telas de gestão de alunos e agendamento
+                if (['screen-alunos', 'screen-perfil-aluno', 'screen-agendamento', 'screen-horarios'].includes(screenId)) activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
+                // Agrupando todas as telas de perfil e configurações
+                if (['screen-perfil-usuario', 'screen-configuracoes', 'screen-pacotes'].includes(screenId)) activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
 
 
                 if (activeButton) {
                     activeButton.classList.remove('text-gray-neutral');
                     activeButton.classList.add('text-primary-blue');
                 }
-                
+
             } else {
+                // Esconde a navegação em telas como Login e Onboarding
                 bottomNav.classList.add('hidden');
             }
         }
 
         // Garante que o scroll vá para o topo da nova tela
-        const appContainer = document.getElementById('screen-content-wrapper'); // O contêiner de scroll
+        const appContainer = document.getElementById('screen-content-wrapper'); 
         if (appContainer) {
             appContainer.scrollTo(0, 0);
         }
     };
 
-    // Função de seleção de abas para a tela de Perfil do Aluno (Screen 5)
+    // Função de seleção de abas para a tela de Perfil do Aluno
     const selectTab = (tabName) => {
         // Remove a classe de ativo de todos os botões e conteúdos
         document.querySelectorAll('.tab-button').forEach(btn => {
@@ -1103,12 +1066,12 @@
         }
     }
 
-    // NOVO: Função para o efeito Acordeão (Accordion) na tela de Pacotes
+    // Função para o efeito Acordeão (Accordion) na tela de Pacotes
     const toggleAccordion = (headerElement) => {
         const item = headerElement.closest('.accordion-item');
         const content = item.querySelector('.accordion-content');
         const icon = item.querySelector('.accordion-icon');
-        
+
         // Verifica se o item clicado já está ativo
         const isActive = item.classList.contains('active');
 
@@ -1119,7 +1082,7 @@
                 otherItem.querySelector('.accordion-icon')?.classList.remove('rotate-90');
             }
         });
-        
+
         // Alterna o estado do item clicado
         if (isActive) {
             item.classList.remove('active');
@@ -1131,7 +1094,11 @@
     }
 
     // Inicializa o app na tela de login
-    showScreen('screen-login');
+    // Isso garante que a primeira tela a ser vista seja a de login.
+    document.addEventListener('DOMContentLoaded', () => {
+        showScreen('screen-login');
+    });
+
 </script>
 
 </body>
