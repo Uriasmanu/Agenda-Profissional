@@ -79,12 +79,12 @@
     </div>
 
     <div id="screen-content-wrapper" class="pt-8 h-[680px] overflow-y-scroll overflow-x-hidden rounded-[24px] relative">
+        
         <div id="screen-login" class="screen flex flex-col h-full p-6 transition-opacity duration-300">
             <div class="text-center mt-4 mb-10">
                 <span class="text-4xl font-extrabold text-primary-blue">TeachFlow</span>
                 <p class="text-gray-neutral mt-1">Gestão inteligente para professores autônomos</p>
             </div>
-
             <div class="w-full h-32 mb-8 flex justify-center items-center">
                 <svg width="150" height="100" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary-blue/70">
                     <rect x="25" y="10" width="100" height="70" rx="10" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -93,30 +93,26 @@
                     <path d="M75 20V45L90 55" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
-
             <div class="space-y-4">
                 <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition duration-150 shadow-sm" />
                 <input type="password" placeholder="Senha" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition duration-150 shadow-sm" />
             </div>
-
             <button onclick="showScreen('screen-dashboard')" class="w-full p-3 mt-8 bg-primary-blue text-white font-semibold rounded-xl shadow-md3 hover:bg-primary-blue/90 transition duration-150">
                 Entrar
             </button>
-
             <div class="text-center mt-6 text-sm space-y-2">
                 <a href="#" class="text-primary-blue hover:underline block">Esqueci minha senha</a>
                 <a href="#" onclick="showScreen('screen-onboarding-1')" class="text-gray-neutral hover:underline block">Criar conta</a>
             </div>
-
-            <div class="mt-auto h-4"></div> </div>
+            <div class="mt-auto h-4"></div>
+        </div>
 
         <div id="screen-onboarding-1" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-            <div class="flex flex-col items-center justify-center text-center h-full">
+             <div class="flex flex-col items-center justify-center text-center h-full">
                 <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">calendar_month</span>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Organize sua agenda</h2>
                 <p class="text-gray-neutral px-4">Planeje suas aulas e gerencie seus horários semanais com facilidade, sem conflitos ou estresse.</p>
             </div>
-
             <div class="flex justify-center space-x-2 my-8">
                 <span class="w-2 h-2 bg-primary-blue rounded-full"></span>
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
@@ -128,12 +124,11 @@
         </div>
 
         <div id="screen-onboarding-2" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-            <div class="flex flex-col items-center justify-center text-center h-full">
+             <div class="flex flex-col items-center justify-center text-center h-full">
                 <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">group</span>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Gerencie seus alunos</h2>
                 <p class="text-gray-neutral px-4">Mantenha todos os contatos, informações e progresso de cada aluno em um só lugar.</p>
             </div>
-
             <div class="flex justify-center space-x-2 my-8">
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
                 <span class="w-2 h-2 bg-primary-blue rounded-full"></span>
@@ -145,12 +140,11 @@
         </div>
 
         <div id="screen-onboarding-3" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-            <div class="flex flex-col items-center justify-center text-center h-full">
+             <div class="flex flex-col items-center justify-center text-center h-full">
                 <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">schedule</span>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Controle seus horários</h2>
                 <p class="text-gray-neutral px-4">Visualize rapidamente seus momentos livres e maximize sua produtividade e renda.</p>
             </div>
-
             <div class="flex justify-center space-x-2 my-8">
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
@@ -675,6 +669,86 @@
             </div>
         </div>
 
+        <div id="screen-perfil-usuario" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
+            <div class="flex flex-col h-full overflow-y-auto pb-16">
+                
+                <div class="bg-primary-blue p-6 pt-12 text-white shadow-md3 relative">
+                    <div class="flex justify-between items-start">
+                        <h1 class="text-2xl font-bold">Meu Perfil</h1>
+                        <button class="flex items-center text-white bg-white/20 px-3 py-1 rounded-full text-xs font-medium shadow-sm hover:bg-white/30 transition duration-150">
+                            <span class="material-icons-outlined text-base mr-1">settings</span> Configs
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center mt-4">
+                        <div class="w-16 h-16 bg-white/50 border-2 border-white rounded-full flex items-center justify-center text-3xl font-extrabold mr-4">JD</div>
+                        <div>
+                            <h2 class="text-xl font-semibold">Júlio Dantas</h2>
+                            <p class="text-sm font-light opacity-80">Professor de Ciências Exatas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 grid grid-cols-2 gap-4">
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3 flex flex-col items-center justify-center">
+                        <span class="material-icons-outlined text-4xl text-primary-blue mb-1">group</span>
+                        <p class="text-3xl font-extrabold text-gray-900">8</p>
+                        <p class="text-sm text-gray-neutral">Alunos Ativos</p>
+                    </div>
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3 flex flex-col items-center justify-center">
+                        <span class="material-icons-outlined text-4xl text-success-green mb-1">payments</span>
+                        <p class="text-3xl font-extrabold text-gray-900">R$ 3.200</p>
+                        <p class="text-sm text-gray-neutral">Faturamento (Mês)</p>
+                    </div>
+                </div>
+
+                <div class="p-4 space-y-4">
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">school</span> Tipo de Serviço</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary-blue/10 text-primary-blue text-sm font-medium px-3 py-1 rounded-full">Professor Particular</span>
+                            <span class="bg-primary-blue/10 text-primary-blue text-sm font-medium px-3 py-1 rounded-full">Tutor de Vestibular</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">list_alt</span> Planos Oferecidos</h3>
+                        <ul class="space-y-2 text-sm text-gray-900">
+                            <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Pacote Básico (4 aulas/mês)</li>
+                            <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Pacote Intermediário (8 aulas/mês)</li>
+                            <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Aulas Avulsas</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">access_time</span> Minha Disponibilidade</h3>
+                        <div class="space-y-3">
+                            <div class="border-b border-gray-100 pb-3">
+                                <p class="font-bold text-gray-900 flex justify-between items-center">
+                                    Segunda-feira
+                                    <span class="text-xs text-primary-blue font-medium">Editar</span>
+                                </p>
+                                <p class="text-sm text-gray-neutral">08:00 - 12:00 | 14:00 - 18:00</p>
+                            </div>
+                            <div class="border-b border-gray-100 pb-3">
+                                <p class="font-bold text-gray-900">Terça-feira</p>
+                                <p class="text-sm text-gray-neutral">08:00 - 17:00 (integral)</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900">Sábado</p>
+                                <p class="text-sm text-danger-red font-medium">Indisponível</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full p-3 mt-6 bg-danger-red text-white font-semibold rounded-xl shadow-md3 hover:bg-danger-red/90 transition duration-150 flex items-center justify-center">
+                        <span class="material-icons-outlined text-xl mr-2">logout</span> Sair da Conta
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     
     <div id="bottom-nav" class="bg-surface-light border-t border-gray-200 shadow-lg flex justify-around items-center h-16 rounded-t-2xl">
@@ -703,7 +777,8 @@
     const screens = [
         'screen-login', 'screen-onboarding-1', 'screen-onboarding-2', 'screen-onboarding-3', 
         'screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 
-        'screen-agendamento', 'screen-horarios'
+        'screen-agendamento', 'screen-horarios', 
+        'screen-perfil-usuario' // Adicionado o novo ID
     ];
 
     const showScreen = (screenId) => {
@@ -724,7 +799,7 @@
         // Controla a visibilidade do Bottom Navigation
         const bottomNav = document.getElementById('bottom-nav');
         // Define quais telas devem mostrar a barra de navegação (todas as telas de conteúdo principal)
-        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios'].includes(screenId);
+        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario'].includes(screenId);
 
         if (bottomNav) {
              if (showNav) {
@@ -739,10 +814,7 @@
                 let activeButton;
                 if (screenId === 'screen-dashboard') activeButton = document.querySelector('#bottom-nav button:nth-child(1)');
                 if (screenId === 'screen-agenda') activeButton = document.querySelector('#bottom-nav button:nth-child(2)');
-                if (screenId === 'screen-alunos') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
-                // Mapeando telas relacionadas a "alunos" para o botão "Alunos"
-                if (screenId === 'screen-perfil-aluno' || screenId === 'screen-horarios') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
-                // O botão de Perfil não tem uma tela implementada ainda no HTML, mas mantém o mapeamento
+                if (screenId === 'screen-alunos' || screenId === 'screen-perfil-aluno' || screenId === 'screen-horarios') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
                 if (screenId === 'screen-perfil-usuario') activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
 
 
