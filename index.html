@@ -111,7 +111,7 @@
              <div class="flex flex-col items-center justify-center text-center h-full">
                 <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">calendar_month</span>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Organize sua agenda</h2>
-                <p class="text-gray-neutral px-4">Planeje suas aulas e gerencie seus horários semanais com facilidade, sem conflitos ou estresse.</p>
+                <p class="text-gray-neutral px-4">Planeje seus treinos e gerencie seus horários semanais com facilidade, sem conflitos ou estresse.</p>
             </div>
             <div class="flex justify-center space-x-2 my-8">
                 <span class="w-2 h-2 bg-primary-blue rounded-full"></span>
@@ -744,7 +744,7 @@
                                 </div>
                                 <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
                             </li>
-                            <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer">
+                            <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer" onclick="showScreen('screen-pacotes')">
                                 <div>
                                     <p class="text-sm font-medium text-gray-900">Gerenciar Pacotes e Preços</p>
                                     <p class="text-xs text-gray-neutral">Ajuste seus planos e valores</p>
@@ -809,6 +809,91 @@
                 </div>
             </div>
         </div>
+        
+        <div id="screen-pacotes" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
+            <div class="flex flex-col h-full">
+                <div class="p-4 pt-12 bg-surface-light shadow-sm flex items-center border-b border-gray-200">
+                    <button onclick="showScreen('screen-configuracoes')" class="text-gray-neutral mr-3">
+                        <span class="material-icons-outlined">arrow_back</span>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-900">Pacotes e Preços</h1>
+                </div>
+
+                <div class="flex-1 overflow-y-auto p-4 space-y-4">
+                    
+                    <div class="bg-primary-blue text-white p-4 rounded-xl shadow-md3">
+                        <p class="text-sm font-light opacity-80 mb-1">Visão Geral (Mês)</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-extrabold">R$ 5.800</span>
+                                <p class="text-xs opacity-80">Faturamento Bruto</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-lg font-bold">85% Ocupação</span>
+                                <p class="text-xs opacity-80">Treinos Agendados</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-gray-900 mb-2 mt-4">Meus Planos Atuais</h2>
+                    
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3 border-l-4 border-success-green">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-base font-bold text-gray-900">Pacote Performance</p>
+                                <p class="text-sm text-gray-neutral">8 Treinos/mês (2x por semana)</p>
+                            </div>
+                            <span class="bg-success-green/10 text-success-green text-xs font-medium px-2 py-0.5 rounded-full">Mensal</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-2">
+                            <p class="text-xl font-extrabold text-primary-blue">R$ 800,00</p>
+                            <button class="text-primary-blue text-sm font-medium hover:underline flex items-center">
+                                <span class="material-icons-outlined text-base mr-1">edit</span> Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3 border-l-4 border-pending-yellow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-base font-bold text-gray-900">Pacote Light</p>
+                                <p class="text-sm text-gray-neutral">4 Treinos/mês (1x por semana)</p>
+                            </div>
+                            <span class="bg-pending-yellow/10 text-pending-yellow text-xs font-medium px-2 py-0.5 rounded-full">Mensal</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-2">
+                            <p class="text-xl font-extrabold text-primary-blue">R$ 450,00</p>
+                            <button class="text-primary-blue text-sm font-medium hover:underline flex items-center">
+                                <span class="material-icons-outlined text-base mr-1">edit</span> Detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-surface-light p-4 rounded-xl shadow-md3 border-l-4 border-primary-blue">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-base font-bold text-gray-900">Treino Avulso</p>
+                                <p class="text-sm text-gray-neutral">Flexibilidade total (Luta ou Beach Tennis)</p>
+                            </div>
+                            <span class="bg-primary-blue/10 text-primary-blue text-xs font-medium px-2 py-0.5 rounded-full">Avulso</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-2">
+                            <p class="text-xl font-extrabold text-primary-blue">R$ 120,00</p>
+                            <button class="text-primary-blue text-sm font-medium hover:underline flex items-center">
+                                <span class="material-icons-outlined text-base mr-1">edit</span> Detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 border-t border-gray-200 bg-surface-light">
+                    <button class="w-full p-3 bg-success-green text-white font-semibold rounded-xl shadow-md3 hover:bg-success-green/90 transition duration-150 flex items-center justify-center">
+                        <span class="material-icons-outlined text-xl mr-2">add_circle</span> Criar Novo Pacote
+                    </button>
+                </div>
+            </div>
+        </div>
 
 
     </div>
@@ -841,7 +926,8 @@
         'screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 
         'screen-agendamento', 'screen-horarios', 
         'screen-perfil-usuario', 
-        'screen-configuracoes' 
+        'screen-configuracoes',
+        'screen-pacotes' // Nova tela incluída
     ];
 
     const showScreen = (screenId) => {
@@ -862,7 +948,7 @@
         // Controla a visibilidade do Bottom Navigation
         const bottomNav = document.getElementById('bottom-nav');
         // Define quais telas devem mostrar a barra de navegação (todas as telas de conteúdo principal)
-        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario', 'screen-configuracoes'].includes(screenId);
+        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario', 'screen-configuracoes', 'screen-pacotes'].includes(screenId);
 
         if (bottomNav) {
              if (showNav) {
@@ -878,7 +964,7 @@
                 if (screenId === 'screen-dashboard') activeButton = document.querySelector('#bottom-nav button:nth-child(1)');
                 if (screenId === 'screen-agenda') activeButton = document.querySelector('#bottom-nav button:nth-child(2)');
                 if (screenId === 'screen-alunos' || screenId === 'screen-perfil-aluno' || screenId === 'screen-agendamento' || screenId === 'screen-horarios') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
-                if (screenId === 'screen-perfil-usuario' || screenId === 'screen-configuracoes') activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
+                if (screenId === 'screen-perfil-usuario' || screenId === 'screen-configuracoes' || screenId === 'screen-pacotes') activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
 
 
                 if (activeButton) {
