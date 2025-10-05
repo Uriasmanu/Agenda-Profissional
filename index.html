@@ -1,12 +1,12 @@
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeachFlow App - UI/UX Mobile</title>
-    <!-- Carregamento do Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuração da Fonte Inter e Ícones Material Design -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style>
@@ -22,13 +22,13 @@
             margin: 2rem auto;
             border: 1px solid #ddd;
             border-radius: 24px; /* Mais arredondado para simular o dispositivo */
-            overflow: hidden;
+            /* REMOVIDO: overflow: hidden; para que o fixed bottom-nav funcione sem ser cortado pelo contêiner pai. */
+            /* O 'overflow: hidden' será aplicado apenas à área de conteúdo. */
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Sombra mais intensa para destacar */
             position: relative;
             background-color: #f7f7f9; /* Fundo levemente cinza do app */
         }
     </style>
-    <!-- Configuração do Tailwind para Cores e Fontes personalizadas -->
     <script>
         tailwind.config = {
             theme: {
@@ -62,8 +62,7 @@
 
 <div id="app-container" class="mobile-screen bg-bg-light">
 
-    <!-- Status Bar (Bateria, WiFi, Hora) -->
-    <div class="absolute top-0 left-0 right-0 h-8 flex justify-between items-center px-4 bg-surface-light z-10 text-xs font-medium text-gray-900 border-b border-gray-100">
+    <div class="absolute top-0 left-0 right-0 h-8 flex justify-between items-center px-4 bg-surface-light z-40 text-xs font-medium text-gray-900 border-b border-gray-100 rounded-t-[24px]">
         <span>9:41</span>
         <div class="flex items-center space-x-1">
             <span class="material-icons-outlined text-base">signal_wifi_4_bar</span>
@@ -71,18 +70,13 @@
         </div>
     </div>
 
-    <div class="pt-8 h-full overflow-y-auto">
-        <!-- --------------------------------------- -->
-        <!-- SCREEN 1: LOGIN (Default View) & ONBOARDING -->
-        <!-- --------------------------------------- -->
+    <div class="pt-8 h-[680px] overflow-y-scroll overflow-x-hidden rounded-[24px] relative">
         <div id="screen-login" class="screen flex flex-col h-full p-6 transition-opacity duration-300">
-            <!-- Logo e Título -->
             <div class="text-center mt-4 mb-10">
                 <span class="text-4xl font-extrabold text-primary-blue">TeachFlow</span>
                 <p class="text-gray-neutral mt-1">Gestão inteligente para professores autônomos</p>
             </div>
 
-            <!-- Ilustração Minimalista (SVG placeholder) -->
             <div class="w-full h-32 mb-8 flex justify-center items-center">
                 <svg width="150" height="100" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary-blue/70">
                     <rect x="25" y="10" width="100" height="70" rx="10" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -92,36 +86,29 @@
                 </svg>
             </div>
 
-            <!-- Formulário de Login -->
             <div class="space-y-4">
                 <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition duration-150 shadow-sm" />
                 <input type="password" placeholder="Senha" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition duration-150 shadow-sm" />
             </div>
 
-            <!-- Botão Entrar -->
             <button onclick="showScreen('screen-dashboard')" class="w-full p-3 mt-8 bg-primary-blue text-white font-semibold rounded-xl shadow-md3 hover:bg-primary-blue/90 transition duration-150">
                 Entrar
             </button>
 
-            <!-- Links de Suporte -->
             <div class="text-center mt-6 text-sm space-y-2">
                 <a href="#" class="text-primary-blue hover:underline block">Esqueci minha senha</a>
                 <a href="#" onclick="showScreen('screen-onboarding-1')" class="text-gray-neutral hover:underline block">Criar conta</a>
             </div>
 
-            <div class="mt-auto h-4"></div> <!-- Padding inferior -->
-        </div>
+            <div class="mt-auto h-4"></div> </div>
 
-        <!-- Tela de Onboarding (Slider Simulation) -->
         <div id="screen-onboarding-1" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-            <!-- Card 1: Organização de Agenda -->
             <div class="flex flex-col items-center justify-center text-center h-full">
                 <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">calendar_month</span>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Organize sua agenda</h2>
                 <p class="text-gray-neutral px-4">Planeje suas aulas e gerencie seus horários semanais com facilidade, sem conflitos ou estresse.</p>
             </div>
 
-            <!-- Paginação e Botão -->
             <div class="flex justify-center space-x-2 my-8">
                 <span class="w-2 h-2 bg-primary-blue rounded-full"></span>
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
@@ -133,14 +120,12 @@
         </div>
 
         <div id="screen-onboarding-2" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-            <!-- Card 2: Gerenciamento de Alunos -->
             <div class="flex flex-col items-center justify-center text-center h-full">
                 <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">group</span>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Gerencie seus alunos</h2>
                 <p class="text-gray-neutral px-4">Mantenha todos os contatos, informações e progresso de cada aluno em um só lugar.</p>
             </div>
 
-            <!-- Paginação e Botão -->
             <div class="flex justify-center space-x-2 my-8">
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
                 <span class="w-2 h-2 bg-primary-blue rounded-full"></span>
@@ -152,14 +137,12 @@
         </div>
 
         <div id="screen-onboarding-3" class="screen hidden flex-col h-full pt-4 px-6 transition-opacity duration-300">
-            <!-- Card 3: Controle de Horários -->
             <div class="flex flex-col items-center justify-center text-center h-full">
                 <span class="material-icons-outlined text-8xl text-primary-blue/80 mb-6">schedule</span>
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Controle seus horários</h2>
                 <p class="text-gray-neutral px-4">Visualize rapidamente seus momentos livres e maximize sua produtividade e renda.</p>
             </div>
 
-            <!-- Paginação e Botão -->
             <div class="flex justify-center space-x-2 my-8">
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
@@ -170,12 +153,8 @@
             </button>
         </div>
 
-        <!-- --------------------------------------- -->
-        <!-- SCREEN 2: DASHBOARD PRINCIPAL -->
-        <!-- --------------------------------------- -->
         <div id="screen-dashboard" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="p-4 pt-12">
-                <!-- Header -->
                 <div class="flex justify-between items-center mb-6">
                     <div>
                         <p class="text-sm text-gray-neutral">Bem-vindo(a) de volta,</p>
@@ -184,7 +163,6 @@
                     <div class="w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center text-xl font-medium text-primary-blue border-2 border-primary-blue/50">JD</div>
                 </div>
 
-                <!-- Card de Resumo do Dia -->
                 <div class="bg-primary-blue text-white p-4 rounded-xl shadow-md3 mb-6">
                     <p class="text-sm font-light">Seu dia está organizado:</p>
                     <div class="flex justify-between items-center mt-1">
@@ -194,7 +172,6 @@
                     <p class="text-xs mt-2 opacity-80">Próximo: João (09:00)</p>
                 </div>
 
-                <!-- Botões de Ação Rápida -->
                 <h2 class="text-lg font-semibold text-gray-900 mb-3">Ações Rápidas</h2>
                 <div class="grid grid-cols-3 gap-3 mb-6">
                     <button onclick="showScreen('screen-agendamento')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
@@ -211,10 +188,8 @@
                     </button>
                 </div>
 
-                <!-- Próximas Aulas -->
                 <h2 class="text-lg font-semibold text-gray-900 mb-3">Próximas Aulas</h2>
                 <div class="space-y-3 pb-20">
-                    <!-- Aula 1 (Confirmada - Azul) -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-primary-blue">
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900">09:00 - João (Matemática)</p>
@@ -225,7 +200,6 @@
                         </div>
                         <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
                     </div>
-                    <!-- Aula 2 (Agendada - Amarelo) -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-pending-yellow">
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900">11:00 - Maria (Personal)</p>
@@ -236,7 +210,6 @@
                         </div>
                         <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
                     </div>
-                    <!-- Aula 3 (Confirmada - Azul) -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-primary-blue">
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900">14:00 - Pedro (Inglês)</p>
@@ -249,42 +222,16 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Bottom Navigation -->
-            <div id="bottom-nav" class="fixed bottom-0 max-w-[380px] w-full bg-surface-light border-t border-gray-200 shadow-lg flex justify-around items-center h-16 rounded-t-2xl">
-                <button onclick="showScreen('screen-dashboard')" class="flex flex-col items-center text-primary-blue">
-                    <span class="material-icons-outlined text-xl">home</span>
-                    <span class="text-xs">Home</span>
-                </button>
-                <button onclick="showScreen('screen-agenda')" class="flex flex-col items-center text-gray-neutral hover:text-primary-blue">
-                    <span class="material-icons-outlined text-xl">calendar_month</span>
-                    <span class="text-xs">Agenda</span>
-                </button>
-                <button onclick="showScreen('screen-alunos')" class="flex flex-col items-center text-gray-neutral hover:text-primary-blue">
-                    <span class="material-icons-outlined text-xl">group</span>
-                    <span class="text-xs">Alunos</span>
-                </button>
-                <button onclick="showScreen('screen-perfil-usuario')" class="flex flex-col items-center text-gray-neutral hover:text-primary-blue">
-                    <span class="material-icons-outlined text-xl">person</span>
-                    <span class="text-xs">Perfil</span>
-                </button>
             </div>
-        </div>
 
-        <!-- --------------------------------------- -->
-        <!-- SCREEN 3: AGENDA SEMANAL -->
-        <!-- --------------------------------------- -->
         <div id="screen-agenda" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="flex flex-col h-full">
-                <!-- Header e Tabs de Dia -->
                 <div class="pt-12 bg-surface-light shadow-md3 z-10">
                     <div class="px-4 pb-2">
                         <h1 class="text-lg font-bold text-gray-900">Agenda Semanal</h1>
                         <p class="text-sm text-gray-neutral">10-16 Jun 2024</p>
                     </div>
-                    <!-- Tabs (Dias da Semana) -->
                     <div class="flex overflow-x-auto border-b border-gray-200">
-                        <!-- Aba Ativa -->
                         <button class="flex-shrink-0 px-4 py-2 text-sm font-semibold text-primary-blue border-b-2 border-primary-blue transition duration-150">SEG</button>
                         <button class="flex-shrink-0 px-4 py-2 text-sm text-gray-neutral hover:text-primary-blue transition duration-150">TER</button>
                         <button class="flex-shrink-0 px-4 py-2 text-sm text-gray-neutral hover:text-primary-blue transition duration-150">QUA</button>
@@ -295,7 +242,6 @@
                     </div>
                 </div>
 
-                <!-- Conteúdo da Agenda (Scrollable) -->
                 <div class="flex-1 overflow-y-auto p-4 space-y-4 pb-20">
                     <div class="grid grid-cols-6 gap-2 text-xs text-gray-neutral">
                         <div class="col-span-1 text-right pt-2 font-medium">08:00</div>
@@ -366,20 +312,14 @@
                 </div>
             </div>
 
-            <!-- Floating Action Button (FAB) -->
             <button onclick="showScreen('screen-agendamento')" class="absolute bottom-20 right-4 p-4 bg-success-green text-white rounded-full shadow-lg hover:bg-success-green/90 transition duration-150 z-20">
                 <span class="material-icons-outlined text-2xl">add</span>
             </button>
-            <div class="h-16"></div> <!-- Espaço para Bottom Nav -->
-        </div>
+            <div class="h-16"></div> </div>
 
-        <!-- --------------------------------------- -->
-        <!-- SCREEN 4: LISTA DE ALUNOS -->
-        <!-- --------------------------------------- -->
         <div id="screen-alunos" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="p-4 pt-12">
                 <h1 class="text-2xl font-bold text-gray-900 mb-4">Meus Alunos</h1>
-                <!-- Search Bar -->
                 <div class="flex space-x-2 mb-4">
                     <input type="text" placeholder="Buscar aluno..." class="flex-1 p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm" />
                     <button class="p-3 bg-surface-light border border-gray-300 rounded-xl text-primary-blue shadow-sm">
@@ -387,7 +327,6 @@
                     </button>
                 </div>
 
-                <!-- Ordenação e Resumo -->
                 <div class="flex justify-between items-center mb-4">
                     <p class="text-sm text-gray-neutral">Total: 8 alunos</p>
                     <div class="flex items-center text-sm text-primary-blue cursor-pointer hover:underline">
@@ -396,9 +335,7 @@
                     </div>
                 </div>
 
-                <!-- Lista de Alunos (Scrollable) -->
                 <div class="space-y-3 pb-20">
-                    <!-- Aluno Card (Simulação de Swipe) -->
                     <div class="bg-surface-light rounded-xl shadow-md3 overflow-hidden">
                         <div class="flex items-center p-3" onclick="showScreen('screen-perfil-aluno')">
                             <div class="w-12 h-12 bg-pending-yellow/20 rounded-full flex items-center justify-center text-lg font-medium text-pending-yellow mr-3">J</div>
@@ -414,14 +351,10 @@
                                 <span class="bg-success-green/10 text-success-green text-xs font-medium px-2 py-0.5 rounded-full">95% freq.</span>
                             </div>
                         </div>
-                        <!-- Swipe Actions (Visual Placeholder) -->
                         <div class="flex justify-end text-xs text-white">
-                            <!-- <div class="bg-primary-blue p-2">Editar</div>
-                            <div class="bg-gray-neutral p-2">Arquivar</div> -->
-                        </div>
+                            </div>
                     </div>
 
-                    <!-- Outros alunos -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3" onclick="showScreen('screen-perfil-aluno')">
                         <div class="w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center text-lg font-medium text-primary-blue mr-3">M</div>
                         <div class="flex-1">
@@ -446,7 +379,6 @@
                         </div>
                     </div>
 
-                    <!-- Empty State Simulation -->
                     <div id="empty-state" class="hidden text-center p-8 bg-surface-light rounded-xl shadow-md3 mt-6">
                         <span class="material-icons-outlined text-4xl text-gray-neutral mb-2">sentiment_satisfied</span>
                         <p class="text-gray-neutral font-medium">Nenhum aluno cadastrado. Que tal adicionar o primeiro?</p>
@@ -454,19 +386,13 @@
                 </div>
             </div>
 
-            <!-- Floating Action Button (FAB) -->
             <button onclick="showScreen('screen-novo-aluno')" class="absolute bottom-20 right-4 p-4 bg-success-green text-white rounded-full shadow-lg hover:bg-success-green/90 transition duration-150 z-20">
                 <span class="material-icons-outlined text-2xl">person_add</span>
             </button>
-            <div class="h-16"></div> <!-- Espaço para Bottom Nav -->
-        </div>
+            <div class="h-16"></div> </div>
 
-        <!-- --------------------------------------- -->
-        <!-- SCREEN 5: PERFIL DO ALUNO -->
-        <!-- --------------------------------------- -->
         <div id="screen-perfil-aluno" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="flex flex-col h-full overflow-y-auto pb-16">
-                <!-- Header do Perfil -->
                 <div class="bg-primary-blue p-6 pt-12 text-white shadow-md3 relative">
                     <button onclick="showScreen('screen-alunos')" class="absolute top-10 left-4 text-white">
                         <span class="material-icons-outlined">arrow_back</span>
@@ -478,7 +404,6 @@
                             <p class="text-sm font-light opacity-80">Matemática - Desde Mar/2024</p>
                         </div>
                     </div>
-                    <!-- Botões de Ação Rápida no Header -->
                     <div class="flex justify-end space-x-2 mt-4">
                         <button class="flex items-center text-primary-blue bg-white px-3 py-1 rounded-full text-xs font-medium shadow-sm">
                             <span class="material-icons-outlined text-base mr-1">edit</span> Editar
@@ -489,7 +414,6 @@
                     </div>
                 </div>
 
-                <!-- Abas de Conteúdo -->
                 <div class="bg-surface-light shadow-md3">
                     <div class="flex justify-around border-b border-gray-200">
                         <button onclick="selectTab('info')" class="tab-button flex-1 text-center py-3 text-sm font-semibold border-b-2 border-primary-blue text-primary-blue">Informações</button>
@@ -498,9 +422,7 @@
                     </div>
                 </div>
 
-                <!-- Conteúdo das Abas -->
                 <div class="flex-1 overflow-y-auto p-4">
-                    <!-- Informações -->
                     <div id="tab-info" class="tab-content space-y-4">
                         <div class="bg-surface-light p-4 rounded-xl shadow-md3">
                             <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">contact_mail</span> Contatos</h2>
@@ -520,7 +442,6 @@
                         </div>
                     </div>
 
-                    <!-- Aulas (Simulação de Aba) -->
                     <div id="tab-aulas" class="tab-content hidden space-y-4">
                         <h2 class="text-lg font-semibold text-gray-900 mb-3">Histórico de Aulas Recentes</h2>
                         <div class="bg-surface-light p-3 rounded-xl shadow-md3 border-l-4 border-primary-blue">
@@ -533,11 +454,9 @@
                         </div>
                     </div>
 
-                    <!-- Progresso (Simulação de Aba) -->
                     <div id="tab-progresso" class="tab-content hidden space-y-4">
                         <h2 class="text-lg font-semibold text-gray-900 mb-3">Gráfico de Frequência</h2>
                         <div class="bg-surface-light p-4 rounded-xl shadow-md3">
-                            <!-- Gráfico Simples de Barras (SVG placeholder) -->
                             <svg viewBox="0 0 100 50" class="w-full h-auto">
                                 <rect x="5" y="50" width="10" height="-3" fill="#6B7280" />
                                 <rect x="20" y="50" width="10" height="-15" fill="#2563EB" />
@@ -553,15 +472,10 @@
                     </div>
                 </div>
             </div>
-            <div class="h-16"></div> <!-- Espaço para Bottom Nav -->
-        </div>
+            <div class="h-16"></div> </div>
 
-        <!-- --------------------------------------- -->
-        <!-- SCREEN 6: AGENDAMENTO DE AULA (Full Screen Modal) -->
-        <!-- --------------------------------------- -->
         <div id="screen-agendamento" class="screen hidden flex-col h-full bg-surface-light transition-opacity duration-300">
             <div class="flex flex-col h-full">
-                <!-- Header -->
                 <div class="p-4 pt-12 bg-surface-light shadow-sm flex items-center border-b border-gray-200">
                     <button onclick="showScreen('screen-dashboard')" class="text-gray-neutral mr-3">
                         <span class="material-icons-outlined">close</span>
@@ -569,19 +483,15 @@
                     <h1 class="text-xl font-bold text-gray-900">Agendar Nova Aula</h1>
                 </div>
 
-                <!-- Formulário de Agendamento (Scrollable) -->
                 <div class="flex-1 overflow-y-auto p-4 space-y-4">
-                    <!-- Seletor de Data -->
                     <div class="bg-bg-light p-4 rounded-xl shadow-md3">
                         <h2 class="font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">calendar_today</span> Selecione a Data</h2>
-                        <!-- Calendário Compacto (Simulação) -->
                         <div class="flex justify-between items-center text-sm font-medium mb-3">
                             <span class="material-icons-outlined text-gray-neutral">chevron_left</span>
                             <span class="text-primary-blue font-bold">Terça, 11 Jun 2024</span>
                             <span class="material-icons-outlined text-gray-neutral">chevron_right</span>
                         </div>
                         <div class="flex justify-around text-center text-xs">
-                            <!-- Dias da semana -->
                             <div class="w-8">Seg</div>
                             <div class="w-8">Ter</div>
                             <div class="w-8">Qua</div>
@@ -591,7 +501,6 @@
                             <div class="w-8">Dom</div>
                         </div>
                         <div class="flex justify-around text-center text-sm mt-1">
-                            <!-- Dias do mês -->
                             <div class="w-8 h-8 flex items-center justify-center text-gray-400">10</div>
                             <div class="w-8 h-8 flex items-center justify-center bg-primary-blue text-white rounded-full font-bold shadow-sm">11</div>
                             <div class="w-8 h-8 flex items-center justify-center text-gray-900">12</div>
@@ -602,7 +511,6 @@
                         </div>
                     </div>
 
-                    <!-- Lista de Horários Livres -->
                     <div class="bg-bg-light p-4 rounded-xl shadow-md3">
                         <h2 class="font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">schedule</span> Horários Disponíveis</h2>
                         <div class="grid grid-cols-3 gap-2 text-center text-sm">
@@ -616,7 +524,6 @@
                         <p class="text-xs text-danger-red mt-2 flex items-center"><span class="material-icons-outlined text-sm mr-1">warning</span> 10:00 - Conflito com aula de João.</p>
                     </div>
 
-                    <!-- Dropdowns e Toggle -->
                     <select class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900">
                         <option value="">Selecione o Aluno</option>
                         <option value="joao">João Silva</option>
@@ -628,7 +535,6 @@
                         <option value="pers">Personal - Treino Funcional</option>
                     </select>
 
-                    <!-- Toggle Recorrente -->
                     <div class="flex justify-between items-center bg-bg-light p-3 rounded-xl shadow-md3">
                         <label for="toggle-recorrente" class="text-sm font-medium text-gray-900">Aula Recorrente (Semanal)</label>
                         <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
@@ -647,7 +553,6 @@
                     </div>
                 </div>
 
-                <!-- Footer com Botões de Ação -->
                 <div class="p-4 border-t border-gray-200 bg-surface-light">
                     <div class="flex space-x-3">
                         <button onclick="showScreen('screen-dashboard')" class="flex-1 p-3 border border-gray-300 text-gray-neutral font-semibold rounded-xl hover:bg-gray-100 transition duration-150">
@@ -661,19 +566,14 @@
             </div>
         </div>
 
-        <!-- --------------------------------------- -->
-        <!-- SCREEN 7: HORÁRIOS LIVRES -->
-        <!-- --------------------------------------- -->
         <div id="screen-horarios" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="flex flex-col h-full">
-                <!-- Header e Filtros -->
                 <div class="p-4 pt-12 bg-surface-light shadow-md3 z-10">
                     <button onclick="showScreen('screen-dashboard')" class="text-gray-neutral mb-2">
                         <span class="material-icons-outlined">arrow_back</span>
                     </button>
                     <h1 class="text-xl font-bold text-gray-900">Horários Livres</h1>
 
-                    <!-- Filtro Dia da Semana -->
                     <select class="w-full p-3 mt-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900">
                         <option value="seg">Segunda-feira 10/06</option>
                         <option value="ter">Terça-feira 11/06</option>
@@ -681,14 +581,11 @@
                     </select>
                 </div>
 
-                <!-- Indicador de Quantidade -->
                 <div class="p-4 text-sm font-medium text-gray-neutral border-b border-gray-200">
                     <p>Você tem <span class="text-success-green font-bold">5</span> horários livres disponíveis nesta Segunda.</p>
                 </div>
 
-                <!-- Lista de Horários (Scrollable) -->
                 <div class="flex-1 overflow-y-auto p-4 space-y-3 pb-20">
-                    <!-- Horário Livre (Verde) -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-success-green">
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900 flex items-center">
@@ -701,7 +598,6 @@
                         </button>
                     </div>
 
-                    <!-- Horário Ocupado (Vermelho/Ocupado) -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-danger-red">
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900 flex items-center">
@@ -712,7 +608,6 @@
                         <span class="text-gray-400 text-xs font-medium">Ocupado</span>
                     </div>
 
-                    <!-- Mais Horários Livres -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-success-green">
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900 flex items-center">
@@ -736,7 +631,6 @@
                         </button>
                     </div>
 
-                    <!-- Horário Ocupado (Amarelo/Agendado) -->
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-pending-yellow">
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900 flex items-center">
@@ -771,10 +665,29 @@
                     </div>
                 </div>
             </div>
-            <div class="h-16"></div> <!-- Espaço para Bottom Nav -->
-        </div>
+            <div class="h-16"></div> </div>
 
     </div>
+    
+    <div id="bottom-nav" class="fixed bottom-0 max-w-[380px] w-full bg-surface-light border-t border-gray-200 shadow-lg flex justify-around items-center h-16 rounded-t-2xl z-50">
+        <button onclick="showScreen('screen-dashboard')" class="flex flex-col items-center text-primary-blue">
+            <span class="material-icons-outlined text-xl">home</span>
+            <span class="text-xs">Home</span>
+        </button>
+        <button onclick="showScreen('screen-agenda')" class="flex flex-col items-center text-gray-neutral hover:text-primary-blue">
+            <span class="material-icons-outlined text-xl">calendar_month</span>
+            <span class="text-xs">Agenda</span>
+        </button>
+        <button onclick="showScreen('screen-alunos')" class="flex flex-col items-center text-gray-neutral hover:text-primary-blue">
+            <span class="material-icons-outlined text-xl">group</span>
+            <span class="text-xs">Alunos</span>
+        </button>
+        <button onclick="showScreen('screen-perfil-usuario')" class="flex flex-col items-center text-gray-neutral hover:text-primary-blue">
+            <span class="material-icons-outlined text-xl">person</span>
+            <span class="text-xs">Perfil</span>
+        </button>
+    </div>
+
 </div>
 
 <script>
@@ -802,18 +715,40 @@
 
         // Controla a visibilidade do Bottom Navigation
         const bottomNav = document.getElementById('bottom-nav');
+        // Define quais telas devem mostrar a barra de navegação
         const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios'].includes(screenId);
 
         if (bottomNav) {
              if (showNav) {
                 bottomNav.classList.remove('hidden');
+                // Altera o estado visual dos botões de navegação
+                document.querySelectorAll('#bottom-nav button').forEach(btn => {
+                    btn.classList.remove('text-primary-blue');
+                    btn.classList.add('text-gray-neutral');
+                });
+
+                // Encontra e ativa o botão correspondente à tela
+                let activeButton;
+                if (screenId === 'screen-dashboard') activeButton = document.querySelector('#bottom-nav button:nth-child(1)');
+                if (screenId === 'screen-agenda') activeButton = document.querySelector('#bottom-nav button:nth-child(2)');
+                if (screenId === 'screen-alunos') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
+                // Você usou screen-perfil-usuario no botão, mas não tem essa tela, então vou mapear screen-perfil-aluno/screen-horarios para Alunos e manter o último botão para Perfil.
+                if (screenId === 'screen-perfil-aluno' || screenId === 'screen-horarios') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
+                if (screenId === 'screen-perfil-usuario') activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
+
+
+                if (activeButton) {
+                    activeButton.classList.remove('text-gray-neutral');
+                    activeButton.classList.add('text-primary-blue');
+                }
+                
             } else {
                 bottomNav.classList.add('hidden');
             }
         }
 
         // Garante que o scroll vá para o topo da nova tela
-        const appContainer = document.querySelector('.mobile-screen > div:last-child');
+        const appContainer = document.querySelector('.mobile-screen > div:nth-child(2)'); // O segundo div filho, que é o scroll container
         if (appContainer) {
             appContainer.scrollTo(0, 0);
         }
@@ -831,7 +766,12 @@
         });
 
         // Adiciona a classe de ativo para o botão e conteúdo selecionado
-        const selectedButton = document.querySelector(`.tab-button:nth-child(${tabName === 'info' ? 1 : tabName === 'aulas' ? 2 : 3})`);
+        let index = 0;
+        if(tabName === 'info') index = 1;
+        else if(tabName === 'aulas') index = 2;
+        else if(tabName === 'progresso') index = 3;
+
+        const selectedButton = document.querySelector(`#screen-perfil-aluno .tab-button:nth-child(${index})`);
         const selectedContent = document.getElementById(`tab-${tabName}`);
 
         if (selectedButton) {
@@ -849,3 +789,4 @@
 
 </body>
 </html>
+
