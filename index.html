@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeachFlow App - UI/UX Mobile</title>
+    <title>TeachFlow App - UI/UX Mobile (Personal Trainer)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -160,23 +160,23 @@
                 <div class="flex justify-between items-center mb-6">
                     <div>
                         <p class="text-sm text-gray-neutral">Bem-vindo(a) de volta,</p>
-                        <h1 class="text-2xl font-bold text-gray-900">Olá, Professor!</h1>
+                        <h1 class="text-2xl font-bold text-gray-900">Olá, Coach Júlio!</h1>
                     </div>
                     <div class="w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center text-xl font-medium text-primary-blue border-2 border-primary-blue/50">JD</div>
                 </div>
                 <div class="bg-primary-blue text-white p-4 rounded-xl shadow-md3 mb-6">
                     <p class="text-sm font-light">Seu dia está organizado:</p>
                     <div class="flex justify-between items-center mt-1">
-                        <span class="text-3xl font-extrabold">Hoje - 3 Aulas</span>
-                        <span class="material-icons-outlined text-3xl">today</span>
+                        <span class="text-3xl font-extrabold">Hoje - 3 Treinos</span>
+                        <span class="material-icons-outlined text-3xl">sports_martial_arts</span>
                     </div>
-                    <p class="text-xs mt-2 opacity-80">Próximo: João (09:00)</p>
+                    <p class="text-xs mt-2 opacity-80">Próximo: João (09:00 - Luta)</p>
                 </div>
                 <h2 class="text-lg font-semibold text-gray-900 mb-3">Ações Rápidas</h2>
                 <div class="grid grid-cols-3 gap-3 mb-6">
                     <button onclick="showScreen('screen-agendamento')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
                         <span class="material-icons-outlined text-2xl">add_box</span>
-                        <span class="text-xs font-medium mt-1">Nova Aula</span>
+                        <span class="text-xs font-medium mt-1">Novo Treino</span>
                     </button>
                     <button onclick="showScreen('screen-alunos')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
                         <span class="material-icons-outlined text-2xl">person_add</span>
@@ -187,21 +187,21 @@
                         <span class="text-xs font-medium mt-1">Horários Livres</span>
                     </button>
                 </div>
-                <h2 class="text-lg font-semibold text-gray-900 mb-3">Próximas Aulas</h2>
+                <h2 class="text-lg font-semibold text-gray-900 mb-3">Próximos Treinos</h2>
                 <div class="space-y-3 pb-20">
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-primary-blue">
                         <div class="flex-1">
-                            <p class="text-sm font-semibold text-gray-900">09:00 - João (Matemática)</p>
+                            <p class="text-sm font-semibold text-gray-900">09:00 - João (Boxe)</p>
                             <p class="text-xs text-primary-blue flex items-center mt-1">
                                 <span class="material-icons-outlined text-sm mr-1">check_circle</span>
-                                Confirmada
+                                Confirmado
                             </p>
                         </div>
                         <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
                     </div>
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-pending-yellow">
                         <div class="flex-1">
-                            <p class="text-sm font-semibold text-gray-900">11:00 - Maria (Personal)</p>
+                            <p class="text-sm font-semibold text-gray-900">11:00 - Maria (Beach Tennis)</p>
                             <p class="text-xs text-pending-yellow flex items-center mt-1">
                                 <span class="material-icons-outlined text-sm mr-1">schedule</span>
                                 Aguardando Confirmação
@@ -211,10 +211,10 @@
                     </div>
                     <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-primary-blue">
                         <div class="flex-1">
-                            <p class="text-sm font-semibold text-gray-900">14:00 - Pedro (Inglês)</p>
+                            <p class="text-sm font-semibold text-gray-900">14:00 - Pedro (Jiu-Jitsu)</p>
                             <p class="text-xs text-primary-blue flex items-center mt-1">
                                 <span class="material-icons-outlined text-sm mr-1">check_circle</span>
-                                Confirmada
+                                Confirmado
                             </p>
                         </div>
                         <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
@@ -251,7 +251,7 @@
                         <div class="col-span-1 text-right pt-2 font-medium">09:00</div>
                         <div class="col-span-5 h-12 bg-primary-blue/90 text-white rounded-lg p-2 shadow-md3 relative overflow-hidden">
                             <p class="font-semibold">09:00-10:00</p>
-                            <p class="text-xs">João - Matemática</p>
+                            <p class="text-xs">João - Boxe</p>
                             <span class="material-icons-outlined text-sm absolute top-1 right-1">check_circle</span>
                         </div>
                     </div>
@@ -265,7 +265,7 @@
                         <div class="col-span-1 text-right pt-2 font-medium">11:00</div>
                         <div class="col-span-5 h-12 bg-pending-yellow/90 text-gray-900 rounded-lg p-2 shadow-md3 relative overflow-hidden">
                             <p class="font-semibold">11:00-12:00</p>
-                            <p class="text-xs">Maria - Personal</p>
+                            <p class="text-xs">Maria - Beach Tennis</p>
                             <span class="material-icons-outlined text-sm absolute top-1 right-1">schedule</span>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                         <div class="col-span-1 text-right pt-2 font-medium">14:00</div>
                         <div class="col-span-5 h-12 bg-primary-blue/90 text-white rounded-lg p-2 shadow-md3 relative overflow-hidden">
                             <p class="font-semibold">14:00-15:00</p>
-                            <p class="text-xs">Pedro - Inglês</p>
+                            <p class="text-xs">Pedro - Jiu-Jitsu</p>
                             <span class="material-icons-outlined text-sm absolute top-1 right-1">check_circle</span>
                         </div>
                     </div>
@@ -339,10 +339,10 @@
                                     João Silva
                                     <span class="ml-2 text-success-green material-icons-outlined text-sm" title="Online">circle</span>
                                 </p>
-                                <p class="text-xs text-gray-neutral">Matemática</p>
+                                <p class="text-xs text-gray-neutral">Boxe</p>
                             </div>
                             <div class="flex space-x-1">
-                                <span class="bg-primary-blue/10 text-primary-blue text-xs font-medium px-2 py-0.5 rounded-full">5 aulas</span>
+                                <span class="bg-primary-blue/10 text-primary-blue text-xs font-medium px-2 py-0.5 rounded-full">5 treinos</span>
                                 <span class="bg-success-green/10 text-success-green text-xs font-medium px-2 py-0.5 rounded-full">95% freq.</span>
                             </div>
                         </div>
@@ -351,10 +351,10 @@
                         <div class="w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center text-lg font-medium text-primary-blue mr-3">M</div>
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900">Maria Souza</p>
-                            <p class="text-xs text-gray-neutral">Personal Trainer</p>
+                            <p class="text-xs text-gray-neutral">Beach Tennis</p>
                         </div>
                         <div class="flex space-x-1">
-                            <span class="bg-primary-blue/10 text-primary-blue text-xs font-medium px-2 py-0.5 rounded-full">12 aulas</span>
+                            <span class="bg-primary-blue/10 text-primary-blue text-xs font-medium px-2 py-0.5 rounded-full">12 treinos</span>
                             <span class="bg-success-green/10 text-success-green text-xs font-medium px-2 py-0.5 rounded-full">100% freq.</span>
                         </div>
                     </div>
@@ -362,10 +362,10 @@
                         <div class="w-12 h-12 bg-danger-red/20 rounded-full flex items-center justify-center text-lg font-medium text-danger-red mr-3">P</div>
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900">Pedro Alves</p>
-                            <p class="text-xs text-gray-neutral">Inglês</p>
+                            <p class="text-xs text-gray-neutral">Jiu-Jitsu</p>
                         </div>
                         <div class="flex space-x-1">
-                            <span class="bg-primary-blue/10 text-primary-blue text-xs font-medium px-2 py-0.5 rounded-full">8 aulas</span>
+                            <span class="bg-primary-blue/10 text-primary-blue text-xs font-medium px-2 py-0.5 rounded-full">8 treinos</span>
                             <span class="bg-danger-red/10 text-danger-red text-xs font-medium px-2 py-0.5 rounded-full">75% freq.</span>
                         </div>
                     </div>
@@ -390,7 +390,7 @@
                         <div class="w-20 h-20 bg-white/30 border-2 border-white rounded-full flex items-center justify-center text-4xl font-extrabold mr-4">J</div>
                         <div>
                             <h1 class="text-2xl font-bold">João Silva</h1>
-                            <p class="text-sm font-light opacity-80">Matemática - Desde Mar/2024</p>
+                            <p class="text-sm font-light opacity-80">Boxe - Desde Mar/2024</p>
                         </div>
                     </div>
                     <div class="flex justify-end space-x-2 mt-4">
@@ -398,15 +398,15 @@
                             <span class="material-icons-outlined text-base mr-1">edit</span> Editar
                         </button>
                         <button class="flex items-center text-white bg-success-green px-3 py-1 rounded-full text-xs font-medium shadow-sm">
-                            <span class="material-icons-outlined text-base mr-1">schedule</span> Agendar Aula
+                            <span class="material-icons-outlined text-base mr-1">schedule</span> Agendar Treino
                         </button>
                     </div>
                 </div>
                 <div class="bg-surface-light shadow-md3">
                     <div class="flex justify-around border-b border-gray-200">
                         <button onclick="selectTab('info')" class="tab-button flex-1 text-center py-3 text-sm font-semibold border-b-2 border-primary-blue text-primary-blue">Informações</button>
-                        <button onclick="selectTab('aulas')" class="tab-button flex-1 text-center py-3 text-sm font-semibold text-gray-neutral border-b-2 border-transparent hover:border-gray-300">Aulas</button>
-                        <button onclick="selectTab('progresso')" class="tab-button flex-1 text-center py-3 text-sm font-semibold text-gray-neutral border-b-2 border-transparent hover:border-gray-300">Progresso</button>
+                        <button onclick="selectTab('aulas')" class="tab-button flex-1 text-center py-3 text-sm font-semibold text-gray-neutral border-b-2 border-transparent hover:border-gray-300">Treinos</button>
+                        <button onclick="selectTab('progresso')" class="tab-button flex-1 text-center py-3 text-sm font-semibold text-gray-neutral border-b-2 border-transparent hover:border-gray-300">Performance</button>
                     </div>
                 </div>
                 <div class="flex-1 overflow-y-auto p-4">
@@ -420,39 +420,40 @@
                             </button>
                         </div>
                         <div class="bg-surface-light p-4 rounded-xl shadow-md3">
-                            <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">flag</span> Objetivos</h2>
-                            <p class="text-sm text-gray-neutral">Aprovação em vestibular de engenharia (Física e Cálculo).</p>
+                            <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">sports_martial_arts</span> Objetivos</h2>
+                            <p class="text-sm text-gray-neutral">Melhorar a resistência cardiovascular e aperfeiçoar o *jab* (Boxe).</p>
                         </div>
                         <div class="bg-surface-light p-4 rounded-xl shadow-md3">
                             <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">medical_services</span> Observações Importantes</h2>
-                            <p class="text-sm text-danger-red font-medium">Tem dificuldade com abstração geométrica. Preferir exemplos práticos.</p>
+                            <p class="text-sm text-danger-red font-medium">Histórico de lesão no joelho esquerdo. Evitar saltos e movimentos de pivô bruscos.</p>
                         </div>
                     </div>
                     <div id="tab-aulas" class="tab-content hidden space-y-4">
-                        <h2 class="text-lg font-semibold text-gray-900 mb-3">Histórico de Aulas Recentes</h2>
+                        <h2 class="text-lg font-semibold text-gray-900 mb-3">Histórico de Treinos Recentes</h2>
                         <div class="bg-surface-light p-3 rounded-xl shadow-md3 border-l-4 border-primary-blue">
-                            <p class="font-semibold text-sm">Aula de Cálculo I (10/Jun)</p>
-                            <p class="text-xs text-gray-neutral">Tópico: Integrais definidas. Duração: 1h30.</p>
+                            <p class="font-semibold text-sm">Treino de Beach Tennis (10/Jun)</p>
+                            <p class="text-xs text-gray-neutral">Tópico: Saque e Voleio. Duração: 1h30.</p>
                         </div>
                         <div class="bg-surface-light p-3 rounded-xl shadow-md3 border-l-4 border-primary-blue">
-                            <p class="font-semibold text-sm">Aula de Geometria (03/Jun)</p>
-                            <p class="text-xs text-gray-neutral">Tópico: Teorema de Pitágoras. Duração: 1h.</p>
+                            <p class="font-semibold text-sm">Treino de Boxe (03/Jun)</p>
+                            <p class="text-xs text-gray-neutral">Tópico: Combinação 1-2-3 (Jab, Direto, Gancho). Duração: 1h.</p>
                         </div>
                     </div>
                     <div id="tab-progresso" class="tab-content hidden space-y-4">
-                        <h2 class="text-lg font-semibold text-gray-900 mb-3">Gráfico de Frequência</h2>
+                        <h2 class="text-lg font-semibold text-gray-900 mb-3">Métricas de Performance</h2>
                         <div class="bg-surface-light p-4 rounded-xl shadow-md3">
-                            <svg viewBox="0 0 100 50" class="w-full h-auto">
-                                <rect x="5" y="50" width="10" height="-3" fill="#6B7280" />
-                                <rect x="20" y="50" width="10" height="-15" fill="#2563EB" />
-                                <rect x="35" y="50" width="10" height="-10" fill="#2563EB" />
-                                <rect x="50" y="50" width="10" height="-25" fill="#2563EB" />
-                                <rect x="65" y="50" width="10" height="-20" fill="#2563EB" />
-                                <rect x="80" y="50" width="10" height="-35" fill="#2563EB" />
-                                <line x1="0" y1="50" x2="100" y2="50" stroke="#6B7280" stroke-width="0.5" />
-                                <text x="80" y="45" font-size="5" fill="#2563EB" text-anchor="middle">95%</text>
-                            </svg>
-                            <p class="text-center text-sm mt-2 text-primary-blue font-medium">Frequência: 95% (20/21)</p>
+                            <p class="text-base font-semibold text-primary-blue mb-2">Aproveitamento nos Golpes (Boxe)</p>
+                            <div class="h-4 bg-gray-200 rounded-full">
+                                <div class="h-4 bg-primary-blue rounded-full" style="width: 78%"></div>
+                            </div>
+                            <p class="text-right text-sm mt-1 text-primary-blue font-medium">78%</p>
+                        </div>
+                        <div class="bg-surface-light p-4 rounded-xl shadow-md3">
+                            <p class="text-base font-semibold text-success-green mb-2">Precisão do Saque (Beach Tennis)</p>
+                            <div class="h-4 bg-gray-200 rounded-full">
+                                <div class="h-4 bg-success-green rounded-full" style="width: 85%"></div>
+                            </div>
+                            <p class="text-right text-sm mt-1 text-success-green font-medium">85%</p>
                         </div>
                     </div>
                 </div>
@@ -465,7 +466,7 @@
                     <button onclick="showScreen('screen-dashboard')" class="text-gray-neutral mr-3">
                         <span class="material-icons-outlined">close</span>
                     </button>
-                    <h1 class="text-xl font-bold text-gray-900">Agendar Nova Aula</h1>
+                    <h1 class="text-xl font-bold text-gray-900">Agendar Novo Treino</h1>
                 </div>
                 <div class="flex-1 overflow-y-auto p-4 space-y-4">
                     <div class="bg-bg-light p-4 rounded-xl shadow-md3">
@@ -504,7 +505,7 @@
                             <button class="p-2 border border-primary-blue bg-primary-blue text-white rounded-lg font-medium shadow-md3">14:00 (Selecionado)</button>
                             <button class="p-2 border border-success-green bg-success-green/10 text-success-green rounded-lg font-medium">15:00 🟢</button>
                         </div>
-                        <p class="text-xs text-danger-red mt-2 flex items-center"><span class="material-icons-outlined text-sm mr-1">warning</span> 10:00 - Conflito com aula de João.</p>
+                        <p class="text-xs text-danger-red mt-2 flex items-center"><span class="material-icons-outlined text-sm mr-1">warning</span> 10:00 - Conflito com treino de João.</p>
                     </div>
                     <select class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900">
                         <option value="">Selecione o Aluno</option>
@@ -512,12 +513,14 @@
                         <option value="maria">Maria Souza</option>
                     </select>
                     <select class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900">
-                        <option value="">Tipo de Aula</option>
-                        <option value="mat">Matemática - Cálculo I</option>
-                        <option value="pers">Personal - Treino Funcional</option>
+                        <option value="">Modalidade</option>
+                        <option value="boxe">Boxe</option>
+                        <option value="jiu">Jiu-Jitsu</option>
+                        <option value="beach">Beach Tennis - Dupla</option>
+                        <option value="funcional">Treino Funcional</option>
                     </select>
                     <div class="flex justify-between items-center bg-bg-light p-3 rounded-xl shadow-md3">
-                        <label for="toggle-recorrente" class="text-sm font-medium text-gray-900">Aula Recorrente (Semanal)</label>
+                        <label for="toggle-recorrente" class="text-sm font-medium text-gray-900">Treino Recorrente (Semanal)</label>
                         <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                             <input type="checkbox" name="toggle" id="toggle-recorrente" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-light border-4 appearance-none cursor-pointer" />
                             <label for="toggle-recorrente" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
@@ -578,7 +581,7 @@
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900 flex items-center">
                                 <span class="text-danger-red material-icons-outlined text-base mr-2">circle</span>
-                                09:00 - 10:00 - João (Matemática)
+                                09:00 - 10:00 - João (Boxe)
                             </p>
                         </div>
                         <span class="text-gray-400 text-xs font-medium">Ocupado</span>
@@ -609,7 +612,7 @@
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900 flex items-center">
                                 <span class="text-pending-yellow material-icons-outlined text-base mr-2">circle</span>
-                                12:00 - 13:00 - Maria (Personal)
+                                12:00 - 13:00 - Maria (Beach Tennis)
                             </p>
                         </div>
                         <span class="text-gray-400 text-xs font-medium">Agendado</span>
@@ -653,35 +656,36 @@
                         <div class="w-16 h-16 bg-white/50 border-2 border-white rounded-full flex items-center justify-center text-3xl font-extrabold mr-4">JD</div>
                         <div>
                             <h2 class="text-xl font-semibold">Júlio Dantas</h2>
-                            <p class="text-sm font-light opacity-80">Professor de Ciências Exatas</p>
+                            <p class="text-sm font-light opacity-80">Personal Trainer (Luta & Beach Tennis)</p>
                         </div>
                     </div>
                 </div>
                 <div class="p-4 grid grid-cols-2 gap-4">
                     <div class="bg-surface-light p-4 rounded-xl shadow-md3 flex flex-col items-center justify-center">
                         <span class="material-icons-outlined text-4xl text-primary-blue mb-1">group</span>
-                        <p class="text-3xl font-extrabold text-gray-900">8</p>
+                        <p class="text-3xl font-extrabold text-gray-900">12</p>
                         <p class="text-sm text-gray-neutral">Alunos Ativos</p>
                     </div>
                     <div class="bg-surface-light p-4 rounded-xl shadow-md3 flex flex-col items-center justify-center">
                         <span class="material-icons-outlined text-4xl text-success-green mb-1">payments</span>
-                        <p class="text-3xl font-extrabold text-gray-900">R$ 3.200</p>
+                        <p class="text-3xl font-extrabold text-gray-900">R$ 5.800</p>
                         <p class="text-sm text-gray-neutral">Faturamento (Mês)</p>
                     </div>
                 </div>
                 <div class="p-4 space-y-4">
                     <div class="bg-surface-light p-4 rounded-xl shadow-md3">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">school</span> Tipo de Serviço</h3>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">sports_handball</span> Modalidades</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary-blue/10 text-primary-blue text-sm font-medium px-3 py-1 rounded-full">Professor Particular</span>
-                            <span class="bg-primary-blue/10 text-primary-blue text-sm font-medium px-3 py-1 rounded-full">Tutor de Vestibular</span>
+                            <span class="bg-primary-blue/10 text-primary-blue text-sm font-medium px-3 py-1 rounded-full">Beach Tennis</span>
+                            <span class="bg-primary-blue/10 text-primary-blue text-sm font-medium px-3 py-1 rounded-full">Boxe e Kickboxing</span>
+                            <span class="bg-primary-blue/10 text-primary-blue text-sm font-medium px-3 py-1 rounded-full">Jiu-Jitsu (Iniciante)</span>
                         </div>
                     </div>
                     <div class="bg-surface-light p-4 rounded-xl shadow-md3">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">list_alt</span> Planos Oferecidos</h3>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">list_alt</span> Pacotes Oferecidos</h3>
                         <ul class="space-y-2 text-sm text-gray-900">
-                            <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Pacote Básico (4 aulas/mês)</li>
-                            <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Pacote Intermediário (8 aulas/mês)</li>
+                            <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Pacote Performance (8 treinos/mês)</li>
+                            <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Pacote Light (4 treinos/mês)</li>
                             <li class="flex items-center"><span class="material-icons-outlined text-success-green text-lg mr-2">check_circle</span> Aulas Avulsas</li>
                         </ul>
                     </div>
@@ -693,14 +697,14 @@
                                     Segunda-feira
                                     <span class="text-xs text-primary-blue font-medium">Editar</span>
                                 </p>
-                                <p class="text-sm text-gray-neutral">08:00 - 12:00 | 14:00 - 18:00</p>
+                                <p class="text-sm text-gray-neutral">08:00 - 12:00 | 16:00 - 20:00</p>
                             </div>
                             <div class="border-b border-gray-100 pb-3">
                                 <p class="font-bold text-gray-900">Terça-feira</p>
-                                <p class="text-sm text-gray-neutral">08:00 - 17:00 (integral)</p>
+                                <p class="text-sm text-gray-neutral">08:00 - 15:00 (integral)</p>
                             </div>
                             <div>
-                                <p class="font-bold text-gray-900">Sábado</p>
+                                <p class="font-bold text-gray-900">Domingo</p>
                                 <p class="text-sm text-danger-red font-medium">Indisponível</p>
                             </div>
                         </div>
@@ -742,8 +746,8 @@
                             </li>
                             <li class="p-4 flex justify-between items-center hover:bg-gray-50 cursor-pointer">
                                 <div>
-                                    <p class="text-sm font-medium text-gray-900">Gerenciar Planos e Preços</p>
-                                    <p class="text-xs text-gray-neutral">Ajuste seus pacotes e valores</p>
+                                    <p class="text-sm font-medium text-gray-900">Gerenciar Pacotes e Preços</p>
+                                    <p class="text-xs text-gray-neutral">Ajuste seus planos e valores</p>
                                 </div>
                                 <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
                             </li>
@@ -837,7 +841,7 @@
         'screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 
         'screen-agendamento', 'screen-horarios', 
         'screen-perfil-usuario', 
-        'screen-configuracoes' // Adicionado o novo ID
+        'screen-configuracoes' 
     ];
 
     const showScreen = (screenId) => {
@@ -858,7 +862,7 @@
         // Controla a visibilidade do Bottom Navigation
         const bottomNav = document.getElementById('bottom-nav');
         // Define quais telas devem mostrar a barra de navegação (todas as telas de conteúdo principal)
-        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario'].includes(screenId);
+        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario', 'screen-configuracoes'].includes(screenId);
 
         if (bottomNav) {
              if (showNav) {
@@ -873,7 +877,7 @@
                 let activeButton;
                 if (screenId === 'screen-dashboard') activeButton = document.querySelector('#bottom-nav button:nth-child(1)');
                 if (screenId === 'screen-agenda') activeButton = document.querySelector('#bottom-nav button:nth-child(2)');
-                if (screenId === 'screen-alunos' || screenId === 'screen-perfil-aluno' || screenId === 'screen-horarios') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
+                if (screenId === 'screen-alunos' || screenId === 'screen-perfil-aluno' || screenId === 'screen-agendamento' || screenId === 'screen-horarios') activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
                 if (screenId === 'screen-perfil-usuario' || screenId === 'screen-configuracoes') activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
 
 
