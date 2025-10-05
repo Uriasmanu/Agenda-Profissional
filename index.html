@@ -169,7 +169,7 @@
                         <span class="material-icons-outlined text-2xl">add_box</span>
                         <span class="text-xs font-medium mt-1">Novo Treino</span>
                     </button>
-                    <button onclick="showScreen('screen-alunos')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
+                    <button onclick="showScreen('screen-novo-aluno')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
                         <span class="material-icons-outlined text-2xl">person_add</span>
                         <span class="text-xs font-medium mt-1">Novo Aluno</span>
                     </button>
@@ -369,6 +369,68 @@
             <button onclick="showScreen('screen-novo-aluno')" class="absolute bottom-20 right-4 p-4 bg-success-green text-white rounded-full shadow-lg hover:bg-success-green/90 transition duration-150 z-20">
                 <span class="material-icons-outlined text-2xl">person_add</span>
             </button>
+        </div>
+
+        <div id="screen-novo-aluno" class="screen hidden flex-col h-full bg-surface-light transition-opacity duration-300">
+            <div class="flex flex-col h-full">
+                <div class="p-4 pt-12 bg-surface-light shadow-sm flex items-center border-b border-gray-200">
+                    <button onclick="showScreen('screen-alunos')" class="text-gray-neutral mr-3">
+                        <span class="material-icons-outlined">arrow_back</span>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-900">Novo Aluno</h1>
+                </div>
+
+                <div class="flex-1 overflow-y-auto p-4 space-y-4 pb-20">
+                    
+                    <div class="bg-bg-light p-4 rounded-xl shadow-md3 border-l-4 border-primary-blue">
+                        <h2 class="font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-primary-blue">person</span> Dados Pessoais</h2>
+                        
+                        <input type="text" placeholder="Nome Completo *" class="w-full p-3 mb-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900" required />
+                        
+                        <input type="tel" placeholder="Telefone / WhatsApp *" class="w-full p-3 mb-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900" required />
+                        
+                        <input type="email" placeholder="E-mail (Opcional)" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900" />
+                    </div>
+
+                    <div class="bg-bg-light p-4 rounded-xl shadow-md3 border-l-4 border-success-green">
+                        <h2 class="font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-success-green">credit_card</span> Plano e Modalidade</h2>
+                        
+                        <select class="w-full p-3 mb-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900">
+                            <option value="">Modalidade Principal *</option>
+                            <option value="boxe">Boxe e Kickboxing</option>
+                            <option value="jiu">Jiu-Jitsu</option>
+                            <option value="beach">Beach Tennis</option>
+                            <option value="funcional">Treino Funcional</option>
+                        </select>
+                        
+                        <select class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue transition duration-150 shadow-sm text-gray-900">
+                            <option value="">Selecione o Pacote *</option>
+                            <option value="performance">Pacote Performance (R$ 800,00)</option>
+                            <option value="light">Pacote Light (R$ 450,00)</option>
+                            <option value="avulso">Treino Avulso (R$ 120,00)</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-bg-light p-4 rounded-xl shadow-md3 border-l-4 border-pending-yellow">
+                        <h2 class="font-semibold text-gray-900 mb-3 flex items-center"><span class="material-icons-outlined text-xl mr-2 text-pending-yellow">comment</span> Objetivos e Observações</h2>
+                        
+                        <textarea placeholder="Principais objetivos do aluno (ex: perda de peso, técnica específica)..." rows="2" class="w-full p-3 mb-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pending-yellow transition duration-150 shadow-sm text-gray-900 resize-none"></textarea>
+                        
+                        <textarea placeholder="Observações importantes (ex: histórico de lesões, restrições médicas)..." rows="2" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-danger-red transition duration-150 shadow-sm text-gray-900 resize-none"></textarea>
+                    </div>
+                </div>
+
+                <div class="p-4 border-t border-gray-200 bg-surface-light">
+                    <div class="flex space-x-3">
+                        <button onclick="showScreen('screen-alunos')" class="flex-1 p-3 border border-gray-300 text-gray-neutral font-semibold rounded-xl hover:bg-gray-100 transition duration-150">
+                            Cancelar
+                        </button>
+                        <button onclick="showScreen('screen-alunos')" class="flex-1 p-3 bg-success-green text-white font-semibold rounded-xl shadow-md3 hover:bg-success-green/90 transition duration-150">
+                            Cadastrar Aluno
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="screen-perfil-aluno" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
@@ -971,7 +1033,8 @@
         'screen-agendamento', 'screen-horarios', 
         'screen-perfil-usuario', 
         'screen-configuracoes',
-        'screen-pacotes'
+        'screen-pacotes',
+        'screen-novo-aluno' // NOVO ALUNO ADICIONADO AQUI
     ];
 
     const showScreen = (screenId) => {
@@ -994,7 +1057,7 @@
         // Controla a visibilidade e o estado do Bottom Navigation
         const bottomNav = document.getElementById('bottom-nav');
         // Define quais telas devem mostrar a barra de navegação
-        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario', 'screen-configuracoes', 'screen-pacotes', 'screen-agendamento'].includes(screenId);
+        const showNav = ['screen-dashboard', 'screen-agenda', 'screen-alunos', 'screen-perfil-aluno', 'screen-horarios', 'screen-perfil-usuario', 'screen-configuracoes', 'screen-pacotes', 'screen-agendamento', 'screen-novo-aluno'].includes(screenId);
 
         if (bottomNav) {
              if (showNav) {
@@ -1010,7 +1073,7 @@
                 if (screenId === 'screen-dashboard') activeButton = document.querySelector('#bottom-nav button:nth-child(1)');
                 if (screenId === 'screen-agenda') activeButton = document.querySelector('#bottom-nav button:nth-child(2)');
                 // Agrupando todas as telas de gestão de alunos e agendamento
-                if (['screen-alunos', 'screen-perfil-aluno', 'screen-agendamento', 'screen-horarios'].includes(screenId)) activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
+                if (['screen-alunos', 'screen-perfil-aluno', 'screen-agendamento', 'screen-horarios', 'screen-novo-aluno'].includes(screenId)) activeButton = document.querySelector('#bottom-nav button:nth-child(3)');
                 // Agrupando todas as telas de perfil e configurações
                 if (['screen-perfil-usuario', 'screen-configuracoes', 'screen-pacotes'].includes(screenId)) activeButton = document.querySelector('#bottom-nav button:nth-child(4)');
 
