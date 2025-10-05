@@ -1,0 +1,65 @@
+<div class="p-4 pt-12">
+    <div class="flex justify-between items-center mb-6">
+        <div>
+            <p class="text-sm text-gray-neutral">Bem-vindo(a) de volta,</p>
+            <h1 class="text-2xl font-bold text-gray-900">Olá, Coach Júlio!</h1>
+        </div>
+        <div class="w-12 h-12 bg-primary-blue/20 rounded-full flex items-center justify-center text-xl font-medium text-primary-blue border-2 border-primary-blue/50">JD</div>
+    </div>
+    <div class="bg-primary-blue text-white p-4 rounded-xl shadow-md3 mb-6">
+        <p class="text-sm font-light">Seu dia está organizado:</p>
+        <div class="flex justify-between items-center mt-1">
+            <span class="text-3xl font-extrabold">Hoje - 3 Treinos</span>
+            <span class="material-icons-outlined text-3xl">sports_martial_arts</span>
+        </div>
+        <p class="text-xs mt-2 opacity-80">Próximo: João (09:00 - Luta)</p>
+    </div>
+    <h2 class="text-lg font-semibold text-gray-900 mb-3">Ações Rápidas</h2>
+    <div class="grid grid-cols-3 gap-3 mb-6">
+        <button onclick="showScreen('screen-agendamento')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
+            <span class="material-icons-outlined text-2xl">add_box</span>
+            <span class="text-xs font-medium mt-1">Novo Treino</span>
+        </button>
+        <button onclick="showScreen('screen-alunos')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
+            <span class="material-icons-outlined text-2xl">person_add</span>
+            <span class="text-xs font-medium mt-1">Novo Aluno</span>
+        </button>
+        <button onclick="showScreen('screen-horarios')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
+            <span class="material-icons-outlined text-2xl">schedule</span>
+            <span class="text-xs font-medium mt-1">Horários Livres</span>
+        </button>
+    </div>
+    <h2 class="text-lg font-semibold text-gray-900 mb-3">Próximos Treinos</h2>
+    <div class="space-y-3 pb-20">
+        <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-primary-blue">
+            <div class="flex-1">
+                <p class="text-sm font-semibold text-gray-900">09:00 - João (Boxe)</p>
+                <p class="text-xs text-primary-blue flex items-center mt-1">
+                    <span class="material-icons-outlined text-sm mr-1">check_circle</span>
+                    Confirmado
+                </p>
+            </div>
+            <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
+        </div>
+        <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-pending-yellow">
+            <div class="flex-1">
+                <p class="text-sm font-semibold text-gray-900">11:00 - Maria (Beach Tennis)</p>
+                <p class="text-xs text-pending-yellow flex items-center mt-1">
+                    <span class="material-icons-outlined text-sm mr-1">schedule</span>
+                    Aguardando Confirmação
+                </p>
+            </div>
+            <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
+        </div>
+        <div class="flex items-center p-3 bg-surface-light rounded-xl shadow-md3 border-l-4 border-primary-blue">
+            <div class="flex-1">
+                <p class="text-sm font-semibold text-gray-900">14:00 - Pedro (Jiu-Jitsu)</p>
+                <p class="text-xs text-primary-blue flex items-center mt-1">
+                    <span class="material-icons-outlined text-sm mr-1">check_circle</span>
+                    Confirmado
+                </p>
+            </div>
+            <span class="material-icons-outlined text-gray-400">arrow_forward_ios</span>
+        </div>
+    </div>
+</div>
