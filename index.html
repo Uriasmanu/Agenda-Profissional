@@ -166,8 +166,7 @@
                 <h2 class="text-lg font-semibold text-gray-900 mb-3">Ações Rápidas</h2>
                 <div class="grid grid-cols-3 gap-3 mb-6">
                     <button onclick="showScreen('screen-agendamento')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
-                        <span class="material-icons-outlined text-2xl">add_box</span>
-                        <span class="text-xs font-medium mt-1">Novo Treino</span>
+                        <span class="material-icons-outlined text-2xl">event_repeat</span> <span class="text-xs font-medium mt-1">Reposição/Extra</span>
                     </button>
                     <button onclick="showScreen('screen-novo-aluno')" class="flex flex-col items-center justify-center p-3 bg-surface-light rounded-xl shadow-md3 text-primary-blue hover:bg-gray-100 transition duration-150">
                         <span class="material-icons-outlined text-2xl">person_add</span>
@@ -1034,7 +1033,7 @@
         'screen-perfil-usuario', 
         'screen-configuracoes',
         'screen-pacotes',
-        'screen-novo-aluno' // NOVO ALUNO ADICIONADO AQUI
+        'screen-novo-aluno' 
     ];
 
     const showScreen = (screenId) => {
