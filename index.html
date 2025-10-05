@@ -8,36 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style>
-        /* Define a fonte Inter como padrão e garante que os ícones funcionem corretamente */
+        /* Estilos Customizados e de Simulação Mobile */
         :root {
             font-family: 'Inter', sans-serif;
         }
 
-        /* Estilo para simular o contêiner de um celular na visualização */
         .mobile-screen {
-            max-width: 380px; /* Largura móvel ideal */
-            height: 680px; /* Altura móvel ideal */
+            max-width: 380px; 
+            height: 680px; 
             margin: 2rem auto;
             border: 1px solid #ddd;
-            border-radius: 24px; /* Mais arredondado para simular o dispositivo */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Sombra mais intensa para destacar */
+            border-radius: 24px; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
             position: relative;
-            background-color: #f7f7f9; /* Fundo levemente cinza do app */
-            /* CHAVE: Cria um novo contexto de empilhamento para que 'fixed' funcione dentro do limite. */
-            transform: translate(0, 0); 
+            background-color: #f7f7f9; 
+            transform: translate(0, 0); /* Garante novo contexto de empilhamento */
         }
 
-        /* CHAVE: Garante que o fixed do menu inferior se limite ao mobile-screen */
         #bottom-nav {
-            position: absolute; /* Mudamos de 'fixed' para 'absolute' */
+            position: absolute; /* Fixa no limite do mobile-screen */
             bottom: 0;
             left: 0;
             right: 0;
-            /* width: 100% é implícito por left:0; right:0; */
-            z-index: 50; /* Garante que fique acima de tudo */
+            z-index: 50;
         }
-
-        /* Estilos do Acordeão */
+        
+        /* Estilos do Acordeão (Pacotes) */
         .accordion-content {
             max-height: 0;
             overflow: hidden;
@@ -45,11 +41,10 @@
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 500px; /* Valor grande o suficiente para expandir */
+            max-height: 500px; 
             transition: max-height 0.4s ease-in;
         }
 
-        /* Rotação do ícone */
         .rotate-90 {
             transform: rotate(90deg);
             transition: transform 0.3s ease;
@@ -65,7 +60,7 @@
         }
     </style>
     <script>
-        // Configuração do Tailwind
+        // Configuração Customizada do Tailwind
         tailwind.config = {
             theme: {
                 extend: {
@@ -75,14 +70,14 @@
                         'gray-neutral': '#6B7280',
                         'pending-yellow': '#F59E0B',
                         'danger-red': '#EF4444',
-                        'surface-light': '#ffffff', /* Cor de fundo de cards */
-                        'bg-light': '#f7f7f9', /* Fundo da tela */
+                        'surface-light': '#ffffff', 
+                        'bg-light': '#f7f7f9', 
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
                     borderRadius: {
-                        'xl': '12px', /* Arredondamento padrão para cards */
+                        'xl': '12px', 
                         '2xl': '16px',
                         '3xl': '24px',
                     },
@@ -146,10 +141,11 @@
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
                 <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
             </div>
-            <button onclick="showScreen('screen-onboarding-2')" class="w-full p-3 bg-primary-blue text-white font-semibold rounded-xl shadow-lg hover:bg-primary-blue/90 transition duration-150 mb-6">
-                Próximo
+            <button onclick="showScreen('screen-dashboard')" class="w-full p-3 bg-primary-blue text-white font-semibold rounded-xl shadow-lg hover:bg-primary-blue/90 transition duration-150 mb-6">
+                Pular / Ir para Dashboard
             </button>
         </div>
+
         <div id="screen-dashboard" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="p-4 pt-12">
                 <div class="flex justify-between items-center mb-6">
@@ -308,7 +304,7 @@
                 <span class="material-icons-outlined text-2xl">add</span>
             </button>
         </div>
-        
+
         <div id="screen-alunos" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="p-4 pt-12">
                 <h1 class="text-2xl font-bold text-gray-900 mb-4">Meus Alunos</h1>
@@ -374,7 +370,7 @@
                 <span class="material-icons-outlined text-2xl">person_add</span>
             </button>
         </div>
-        
+
         <div id="screen-perfil-aluno" class="screen hidden flex-col h-full bg-bg-light transition-opacity duration-300">
             <div class="flex flex-col h-full overflow-y-auto pb-16">
                 <div class="bg-primary-blue p-6 pt-12 text-white shadow-md3 relative">
@@ -466,7 +462,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="screen-agendamento" class="screen hidden flex-col h-full bg-surface-light transition-opacity duration-300">
             <div class="flex flex-col h-full">
                 <div class="p-4 pt-12 bg-surface-light shadow-sm flex items-center border-b border-gray-200">
