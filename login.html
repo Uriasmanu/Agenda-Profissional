@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeachFlow App - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons_Outlined" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter como padrão */
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Estilo para simular o contêiner de um celular na visualização */
+        .mobile-screen {
+            max-width: 380px;
+            height: 680px;
+            margin: 2rem auto;
+            border: 1px solid #ddd;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            background-color: #f7f7f9;
+            /* Garante que o conteúdo role se for maior */
+            overflow: hidden; 
+        }
+
+        /* Estilo da tela de conteúdo */
+        .screen {
+             height: 100%; /* Ocupa a altura total do container pai */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#2563EB',
+                        'gray-neutral': '#6B7280',
+                    },
+                    borderRadius: {
+                        'xl': '12px',
+                    },
+                    boxShadow: {
+                        'md3': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div id="app-container" class="mobile-screen bg-bg-light">
+
+    <div class="absolute top-0 left-0 right-0 h-8 flex justify-between items-center px-4 bg-white z-40 text-xs font-medium text-gray-900 border-b border-gray-100 rounded-t-[24px]">
+        <span>9:41</span>
+        <div class="flex items-center space-x-1">
+            <span class="material-icons_Outlined text-base">signal_wifi_4_bar</span>
+            <span class="material-icons_Outlined text-base">battery_full</span>
+        </div>
+    </div>
+
+    <div id="screen-content-wrapper" class="pt-8 h-[680px] overflow-y-scroll overflow-x-hidden rounded-[24px] relative">
+        
+        <div id="screen-login" class="screen flex flex-col h-full p-6 transition-opacity duration-300">
+            <div class="text-center mt-4 mb-10">
+                <span class="text-4xl font-extrabold text-primary-blue">TeachFlow</span>
+                <p class="text-gray-neutral mt-1">Gestão inteligente para professores autônomos</p>
+            </div>
+            
+            <div class="w-full h-32 mb-8 flex justify-center items-center">
+                <svg width="150" height="100" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-primary-blue/70">
+                    <rect x="25" y="10" width="100" height="70" rx="10" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M40 10V90M110 10V90" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="75" cy="45" r="30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M75 20V45L90 55" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <div class="space-y-4">
+                <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition duration-150 shadow-sm" />
+                <input type="password" placeholder="Senha" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition duration-150 shadow-sm" />
+            </div>
+            
+            <button onclick="showScreen('screen-dashboard')" class="w-full p-3 mt-8 bg-primary-blue text-white font-semibold rounded-xl shadow-md3 hover:bg-primary-blue/90 transition duration-150">
+                Entrar
+            </button>
+            
+            <div class="text-center mt-6 text-sm space-y-2">
+                <a href="#" class="text-primary-blue hover:underline block">Esqueci minha senha</a>
+                <a href="#" onclick="alert('Funcionalidade de Cadastro (próxima tela)')" class="text-gray-neutral hover:underline block">Criar conta</a>
+            </div>
+            <div class="mt-auto h-4"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    // Função de navegação simplificada, essencial para o botão Entrar funcionar.
+    // Em um projeto real, essa função estaria em um arquivo JS separado (ex: utils.js)
+    const showScreen = (screenId) => {
+        // Simulação de navegação: apenas alerta para onde iria
+        if (screenId === 'screen-dashboard') {
+            alert("Acesso liberado! Navegando para a Tela de Dashboard.");
+            // Aqui você faria a lógica de carregamento do dashboard
+        } else {
+             alert(`Navegando para a tela: ${screenId}`);
+        }
+    };
+    
+    // Como esta é apenas a tela de Login, ela sempre estará visível.
+</script>
+
+</body>
+</html>
