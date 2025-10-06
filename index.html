@@ -5,89 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeachFlow App - UI/UX Mobile (Personal Trainer)</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <style>
-        /* Estilos Customizados e de Simulação Mobile */
-        :root {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .mobile-screen {
-            max-width: 380px; 
-            height: 680px; 
-            margin: 2rem auto;
-            border: 1px solid #ddd;
-            border-radius: 24px; 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
-            position: relative;
-            background-color: #f7f7f9; 
-            transform: translate(0, 0); /* Garante novo contexto de empilhamento */
-        }
-
-        #bottom-nav {
-            position: absolute; /* Fixa no limite do mobile-screen */
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-        }
-        
-        /* Estilos do Acordeão (Pacotes) */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .accordion-item.active .accordion-content {
-            max-height: 500px; 
-            transition: max-height 0.4s ease-in;
-        }
-
-        .rotate-90 {
-            transform: rotate(90deg);
-            transition: transform 0.3s ease;
-        }
-
-        /* Estilo para o Toggle */
-        .toggle-checkbox:checked {
-            right: 0;
-            border-color: #2563EB;
-        }
-        .toggle-checkbox:checked + .toggle-label {
-            background-color: #2563EB;
-        }
-    </style>
-    <script>
-        // Configuração Customizada do Tailwind
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-blue': '#2563EB',
-                        'success-green': '#10B981',
-                        'gray-neutral': '#6B7280',
-                        'pending-yellow': '#F59E0B',
-                        'danger-red': '#EF4444',
-                        'surface-light': '#ffffff', 
-                        'bg-light': '#f7f7f9', 
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        'xl': '12px', 
-                        '2xl': '16px',
-                        '3xl': '24px',
-                    },
-                    boxShadow: {
-                        'md3': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
